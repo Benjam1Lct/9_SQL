@@ -1,0 +1,69 @@
+1.
+SELECT livre.titre
+FROM emprunt
+JOIN livre ON emprunt.isbn=livre.isbn ;
+
+2.
+SELECT livre.titre
+FROM emprunt
+JOIN livre ON emprunt.isbn=livre.isbn
+WHERE emprunt.date < '2022-03-31' ;
+
+3.
+SELECT auteur.nom, auteur.prenom
+FROM livre
+JOIN auteur_de ON livre.isbn=auteur_de.isbn
+JOIN auteur ON auteur_de.a_id=auteur.a_id
+WHERE livre.titre='1984' ;
+
+4.
+SELECT usager.nom, usager.prenom
+FROM emprunt
+JOIN usager ON emprunt.codebarre=usager.codebarre
+JOIN livre ON emprunt.isbn=livre.isbn
+
+5.
+SELECT usager.nom, usager.prenom
+FROM emprunt
+JOIN usager ON emprunt.codebarre=usager.codebarre
+JOIN livre ON emprunt.isbn=livre.isbn
+ORDER BY usager.nom ASC
+
+6.
+SELECT titre
+FROM (
+    SELECT DISTINCT *
+    FROM livre
+    WHERE titre = 'Dune'
+) AS tmp
+WHERE annee < tmp.annee
+
+7.
+SELECT auteur.nom, auteur.prenom
+FROM (
+    SELECT *
+    FROM (
+        SELECT DISTINCT *
+        FROM livre
+        WHERE titre = 'Dune'
+    ) AS tmp
+    WHERE annee < tmp.annee
+) AS tmp_final
+JOIN auteur_de ON tmp_final.isbn=auteur_de.isbn
+JOIN auteur ON auteur_de.a_id=auteur.a_id
+
+8.
+SELECT DISTINCT auteur.nom, auteur.prenom
+FROM (
+    SELECT *
+    FROM (
+        SELECT DISTINCT *
+        FROM livre
+        WHERE titre = 'Dune'
+    ) AS tmp
+    WHERE annee < tmp.annee
+) AS tmp_final
+JOIN auteur_de ON tmp_final.isbn=auteur_de.isbn
+JOIN auteur ON auteur_de.a_id=auteur.a_id
+
+9.
