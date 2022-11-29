@@ -1,0 +1,4 @@
+On recupere les titre de livre ou il y q le mot 'Robot' dedant
+On recupere les nom et le prenom des usqger de la media vivant a 'Guingamp'
+On recupere le nom et le prenom des usager qui on emprunte des livre a rendre avant le 02/04/2022
+On recupere le titre des livre parrut apres 1990

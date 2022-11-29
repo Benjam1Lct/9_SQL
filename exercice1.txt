@@ -18,14 +18,29 @@ WHERE annee < 1980 ;
 5.
 SELECT titre
 FROM livre
-WHERE "A" in titre ;
+WHERE titre LIKE '%A%' ;
 
 6.
 SELECT isbn
 FROM livre
-WHERE retour == '2022-02-01' ;
+WHERE retour = '2022-02-01' ;
 
 7.
 SELECT nom
-FROM quteur
-ORDER BY nom ASC
+FROM auteur
+ORDER BY nom ASC ;
+
+8.
+SELECT nom
+FROM usager
+WHERE cp = '75012' OR cp = '75013' ;
+
+9.
+SELECT nom, adresse
+FROM usager
+WHERE NOT ( adresse LIKE '%RUE%' );
+
+10.
+SELECT annee, titre
+FROM livre
+WHERE annee%4=0 AND (annee%400=0 OR annee%100<>0) ;
