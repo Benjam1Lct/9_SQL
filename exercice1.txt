@@ -1,0 +1,31 @@
+1. 
+SELECT titre
+FROM livre ;
+
+2.
+SELECT nom
+FROM usager ;
+
+3.
+SELECT DISTINCT nom
+FROM usager ;
+
+4. 
+SELECT titre
+FROM livre
+WHERE annee < 1980 ;
+
+5.
+SELECT titre
+FROM livre
+WHERE "A" in titre ;
+
+6.
+SELECT isbn
+FROM livre
+WHERE retour == '2022-02-01' ;
+
+7.
+SELECT nom
+FROM quteur
+ORDER BY nom ASC
