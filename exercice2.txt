@@ -67,3 +67,16 @@ JOIN auteur_de ON tmp_final.isbn=auteur_de.isbn
 JOIN auteur ON auteur_de.a_id=auteur.a_id
 
 9.
+SELECT COUNT * 
+FROM (SELECT DISTINCT auteur.nom, auteur.prenom
+    FROM (
+        SELECT *
+        FROM (
+            SELECT DISTINCT *
+            FROM livre
+            WHERE titre = 'Dune'
+        ) AS tmp
+        WHERE annee < tmp.annee
+    ) AS tmp_final
+    JOIN auteur_de ON tmp_final.isbn=auteur_de.isbn
+    JOIN auteur ON auteur_de.a_id=auteur.a_id)

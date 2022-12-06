@@ -1,0 +1,4 @@
+SELECT ipPartie
+FROM partie
+JOIN joueur ON partie.idJoueur1=joueur.idJoueur
+WHERE 
