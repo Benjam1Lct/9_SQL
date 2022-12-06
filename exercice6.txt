@@ -1,4 +1,26 @@
-SELECT ipPartie
+1.a.
+SELECT idPartie
 FROM partie
-JOIN joueur ON partie.idJoueur1=joueur.idJoueur
-WHERE 
+WHERE idVainqueur = 3
+
+1.b.
+SELECT joueur.nomJoueur, joueur.prenomJoueur
+FROM partie
+JOIN joueur ON partie.idVainqueur=joueur.idJoueur
+WHERE idVainqueur = 3
+
+2.a.
+on obtient la difference de score entre les deux joueurs dans le negatif
+erreur
+
+2.b.
+SELECT score1-score2
+FROM partie
+
+2.c.
+SELECT COUNT partie.idVainqueur
+FROM partie
+JOIN joueur ON partie.idVainqueur=joueur.idJoueur
+WHERE joueur.prenomJoueur = "Achille" and joueur.nomJoueur = "Talon"
+
+3.
