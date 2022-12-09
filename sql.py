@@ -36,7 +36,7 @@ for line in lines:
     if line != "\n":
         mycursor.execute(line)
 
-mycursor.execute("SELECT DISTINCT titre FROM film JOIN projection AS p ON p.num_film = film.num_film WHERE p.num_cine = 3")
+mycursor.execute("SELECT DISTINCT nom, prenom FROM individu WHERE NOT nom LIKE (SELECT DISTINCT nom, prenom FROM individu JOIN film AS f ON f.num_ind = individu.num_ind)")
 
 
 # la méthode fetchall stock toute la base dans la variable answer
