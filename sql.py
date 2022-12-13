@@ -36,7 +36,13 @@ for line in lines:
     if line != "\n":
         mycursor.execute(line)
 
-mycursor.execute("")
+mycursor.execute("""
+SELECT titre 
+FROM film
+JOIN projection AS p
+ON p.num_film = film.num_film
+WHERE 
+""")
 
 
 # la méthode fetchall stock toute la base dans la variable answer

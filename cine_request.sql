@@ -1,4 +1,3 @@
-"""
 1.
 SELECT DISTINCT titre 
 FROM film 
@@ -112,4 +111,3 @@ FROM film AS f
 JOIN projection AS p 
 ON p.num_film = f.num_film
 WHERE YEAR(f.annee)+5 <= YEAR(p.dates)
-"""
